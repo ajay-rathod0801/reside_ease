@@ -1,6 +1,6 @@
-# untitled
+# Reside-Ease
 
-A new Flutter project.
+A Flutter application for residents of a society to manage their day to day activities.
 
 ## Getting Started
 
