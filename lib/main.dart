@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:reside_ease/introductory_screen.dart';
 // import 'package:reside_ease/login_screen.dart';
 
-void main() => runApp(const LoginApp());
+void main() => runApp(const MyApp());
 
-class LoginApp extends StatelessWidget {
-  const LoginApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
