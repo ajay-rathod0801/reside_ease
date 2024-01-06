@@ -1,6 +1,6 @@
 # Reside-Ease
 
-A Flutter application for residents of a society to manage their day to day activities.
+A Flutter application for residents of a society to manage their day to day activities and to keep a track of their dues.
 
 ## Getting Started
 
