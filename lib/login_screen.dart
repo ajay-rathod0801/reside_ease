@@ -1,0 +1,184 @@
+import 'package:flutter/material.dart';
+
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
+  @override
+  State<StatefulWidget> createState() {
+    return LoginScreenState();
+  }
+}
+
+// create a login screen state
+class LoginScreenState extends State<LoginScreen> {
+  // create a form key
+  final _formKey = GlobalKey<FormState>();
+
+  // create a text editing controller
+  final _usernameController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  // create a focus node
+  final _usernameFocusNode = FocusNode();
+  final _passwordFocusNode = FocusNode();
+
+  @override
+  void initState() {
+    super.initState();
+
+    _usernameFocusNode.addListener(() {
+      if (_usernameFocusNode.hasFocus) {
+        _usernameController.clear();
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _usernameController.dispose();
+    _passwordController.dispose();
+
+    // dispose the focus nodes
+    _usernameFocusNode.dispose();
+    _passwordFocusNode.dispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // create
+    return SafeArea(
+      child: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Form(
+            key: _formKey,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: 180,
+                  ),
+                  const Text(
+                    'Login or Sign up',
+                    style: TextStyle(
+                      fontSize: 32,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 50,
+                  ),
+                  TextFormField(
+                    controller: _usernameController,
+                    focusNode: _usernameFocusNode,
+                    decoration: const InputDecoration(
+                      labelText: 'Enter Phone Number or Email ID',
+                    ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter a username';
+                      }
+                      return null;
+                    },
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  OutlinedButton(
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text('Processing Data'),
+                          ),
+                        );
+                      }
+                    },
+                    child: const Text(
+                      'Continue',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  const Divider(
+                    thickness: 1,
+                  ),
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'OR',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  OutlinedButton.icon(
+                    onPressed: () {},
+                    icon: Image.asset(
+                      'assets/icons/icons_google.png',
+                      width: 24,
+                      height: 24,
+                    ),
+                    label: const Text(
+                      'Continue with Google',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                  OutlinedButton.icon(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.facebook,
+                      color: Colors.blue,
+                    ),
+                    label: const Text(
+                      'Continue with Facebook',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                  OutlinedButton.icon(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.apple_outlined,
+                      color: Colors.black,
+                    ),
+                    label: const Text(
+                      'Continue with Apple',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  const Text(
+                    'Already registered? Scan QR Code',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
