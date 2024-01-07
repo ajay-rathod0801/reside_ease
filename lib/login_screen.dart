@@ -78,7 +78,7 @@ class LoginScreenState extends State<LoginScreen> {
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Please enter a username';
+                        return 'Please enter a phone number or email ID';
                       }
                       return null;
                     },
