@@ -76,7 +76,7 @@ class OtpScreenState extends State<OtpScreen> {
                       labelText:
                           'Enter the code sent to +91', //this phone number should be the one entered in the previous screen
                       labelStyle: TextStyle(
-                        fontSize: 16.0,
+                        fontSize: 14.0,
                         fontWeight: FontWeight.w600,
                       ),
                       hintText: 'Enter OTP',

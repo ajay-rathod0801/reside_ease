@@ -56,7 +56,7 @@ class TenDigitCodeScreenState extends State<TenDigitCodeScreen> {
                     height: 180,
                   ),
                   const Text(
-                    'Confirm your number',
+                    'Enter Code',
                     style: TextStyle(
                       fontSize: 32.0,
                       fontWeight: FontWeight.bold,
@@ -75,7 +75,7 @@ class TenDigitCodeScreenState extends State<TenDigitCodeScreen> {
                       labelText:
                           'Enter the security code shared by the administrator', //this phone number should be the one entered in the previous screen
                       labelStyle: TextStyle(
-                        fontSize: 16.0,
+                        fontSize: 14.0,
                         fontWeight: FontWeight.w600,
                       ),
                       hintText: 'Enter 10 Digit Code',
