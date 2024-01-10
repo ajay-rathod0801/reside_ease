@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reside_ease/otp_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -89,9 +90,10 @@ class LoginScreenState extends State<LoginScreen> {
                   OutlinedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text('Processing Data'),
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const OtpScreen(),
                           ),
                         );
                       }
