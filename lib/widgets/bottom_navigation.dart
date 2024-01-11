@@ -35,7 +35,7 @@ class _NavigationExampleState extends State<BottomNavigation> {
           NavigationDestination(
             selectedIcon: Icon(Icons.person),
             icon: Icon(Icons.person_2_outlined),
-            label: 'Messages',
+            label: 'Profile',
           ),
         ],
       ),
