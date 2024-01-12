@@ -41,7 +41,7 @@ class _NavigationExampleState extends State<BottomNavigation> {
       ),
       body: const Scaffold(
         body: Center(
-          child: Text('Demo Test'),
+          child: Text('Home Page Demo'),
         ),
       ),
     );
