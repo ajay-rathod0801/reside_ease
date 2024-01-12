@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:reside_ease/introductory_screen.dart';
+// import 'package:reside_ease/otp_screen.dart';
 // import 'package:reside_ease/introductory_screen.dart';
-import 'package:reside_ease/widgets/top_appbar.dart';
+// import 'package:reside_ease/widgets/top_appbar.dart';
 // import 'package:reside_ease/widgets/bottom_navigation.dart';
 // import 'package:reside_ease/otp_screen.dart';
 // import 'package:reside_ease/login_screen.dart';
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
         // primarySwatch: Colors.blue,
         scaffoldBackgroundColor: const Color.fromRGBO(249, 249, 255, 1),
       ),
-      home: const TopAppBar(),
+      home: const IntroductoryScreen(),
     );
   }
 }

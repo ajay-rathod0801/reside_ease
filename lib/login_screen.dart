@@ -81,6 +81,19 @@ class LoginScreenState extends State<LoginScreen> {
                       if (value == null || value.isEmpty) {
                         return 'Please enter a phone number or email ID';
                       }
+                      // regex pattern for email
+                      String emailPattern =
+                          r'^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$';
+                      RegExp emailRegex = RegExp(emailPattern);
+
+                      // regex pattern for phone number (Indian format)
+                      String phonePattern = r'^[6-9]\d{9}$';
+                      RegExp phoneRegex = RegExp(phonePattern);
+
+                      if (!emailRegex.hasMatch(value) &&
+                          !phoneRegex.hasMatch(value)) {
+                        return 'Please enter a valid phone number or email ID';
+                      }
                       return null;
                     },
                   ),
