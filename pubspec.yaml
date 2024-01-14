@@ -67,7 +67,15 @@ flutter:
     - assets/icons/log.png
     - assets/icons/call.png
     - assets/icons/SOS.png
-  #   - images/a_dot_ham.jpeg
+    - assets/icons/avatar.png
+    - assets/icons/card.png
+    - assets/icons/bill.png
+    - assets/icons/helpdesk.png
+    - assets/icons/domestic.png
+    - assets/icons/connect.png
+    - assets/icons/emergency.png
+    - assets/icons/residentdir.png
+    - assets/icons/budget.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
