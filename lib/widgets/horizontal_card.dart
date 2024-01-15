@@ -1,5 +1,3 @@
-// create a horizontal card widget with a title and subtitle below the title and am image at the end of the card from left to right.
-
 import 'package:flutter/material.dart';
 
 class HorizontalCard extends StatelessWidget {
@@ -33,7 +31,7 @@ class HorizontalCard extends StatelessWidget {
                     Text(
                       title,
                       style: const TextStyle(
-                        fontWeight: FontWeight.w600, // semibold
+                        fontWeight: FontWeight.w600,
                         fontSize: 23,
                       ),
                     ),
@@ -42,19 +40,18 @@ class HorizontalCard extends StatelessWidget {
                       child: Text(
                         subtitle,
                         style: const TextStyle(
-                          fontWeight: FontWeight.w500, // semibold
+                          fontWeight: FontWeight.w500,
                           fontSize: 14,
                         ),
                       ),
                     ),
-                    // Add your subtitle Text widget here
                   ],
                 ),
                 const SizedBox(
-                    width:
-                        8.0), // Add some space between the text and the image
+                  width: 8.0,
+                ),
                 Expanded(
-                  child: Image.asset(image), // Your image goes here
+                  child: Image.asset(image),
                 ),
               ],
             ),
