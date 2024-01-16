@@ -123,6 +123,15 @@ class TenDigitCodeScreenState extends State<TenDigitCodeScreen> {
                         );
                       }
                     },
+                    style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      side: const BorderSide(
+                        color: Colors.black,
+                        width: 1,
+                      ),
+                    ),
                     child: const Text(
                       'Continue',
                       style: TextStyle(
