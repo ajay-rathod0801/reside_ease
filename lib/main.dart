@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:reside_ease/home_screen.dart';
+
+// import 'package:reside_ease/home_screen.dart';
 import 'package:reside_ease/introductory_screen.dart';
 // import 'package:reside_ease/otp_screen.dart';
 // import 'package:reside_ease/introductory_screen.dart';
@@ -21,20 +22,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: const Color.fromRGBO(249, 249, 255, 1),
       ),
-      home: const HomeScreen(),
+      home: const IntroductoryScreen(),
     );
   }
 }
-
-// uncomment for bottom navigation bar
-// class MyHomePage extends StatelessWidget {
-//   const MyHomePage({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return const Scaffold(
-//       body: IntroductoryScreen(),
-//       bottomNavigationBar: BottomNavigation(),
-//     );
-//   }
-// }

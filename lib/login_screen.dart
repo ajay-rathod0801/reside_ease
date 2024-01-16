@@ -100,7 +100,7 @@ class LoginScreenState extends State<LoginScreen> {
                   const SizedBox(
                     height: 20,
                   ),
-                  OutlinedButton(
+                  ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         Navigator.push(
@@ -111,6 +111,15 @@ class LoginScreenState extends State<LoginScreen> {
                         );
                       }
                     },
+                    style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      side: const BorderSide(
+                        color: Colors.black,
+                        width: 1,
+                      ),
+                    ),
                     child: const Text(
                       'Continue',
                       style: TextStyle(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:reside_ease/home_screen.dart';
 
 class TenDigitCodeScreen extends StatefulWidget {
   const TenDigitCodeScreen({Key? key}) : super(key: key);
@@ -114,12 +115,12 @@ class TenDigitCodeScreenState extends State<TenDigitCodeScreen> {
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         // navigate to the home screen
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //     builder: (context) => const HomeScreen(),
-                        //   ),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const HomeScreen(),
+                          ),
+                        );
                       }
                     },
                     child: const Text(

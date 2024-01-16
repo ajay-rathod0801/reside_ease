@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:reside_ease/login_screen.dart';
 
-class IntroductoryScreen extends StatelessWidget {
+class IntroductoryScreen extends StatefulWidget {
   const IntroductoryScreen({Key? key}) : super(key: key);
+
+  @override
+  _IntroductoryScreenState createState() => _IntroductoryScreenState();
+}
+
+class _IntroductoryScreenState extends State<IntroductoryScreen> {
+  bool isButtonClicked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +26,7 @@ class IntroductoryScreen extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            OutlinedButton.icon(
+            ElevatedButton.icon(
               icon: const Icon(
                 Icons.arrow_forward,
                 size: 20,
@@ -33,6 +40,9 @@ class IntroductoryScreen extends StatelessWidget {
                 ),
               ),
               onPressed: () {
+                setState(() {
+                  isButtonClicked = true;
+                });
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -40,14 +50,16 @@ class IntroductoryScreen extends StatelessWidget {
                   ),
                 );
               },
-              style: OutlinedButton.styleFrom(
+              style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(6),
                 ),
                 side: const BorderSide(
-                  color: Colors.black,
+                  color: Colors.blue,
                   width: 1,
                 ),
+                shadowColor: isButtonClicked ? Colors.blue.shade900 : null,
+                elevation: isButtonClicked ? 10 : 0,
               ),
             ),
           ],
