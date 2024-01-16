@@ -111,7 +111,7 @@ class LoginScreenState extends State<LoginScreen> {
                         );
                       }
                     },
-                    style: ElevatedButton.styleFrom(
+                    style: OutlinedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(6),
                       ),

@@ -123,7 +123,7 @@ class TenDigitCodeScreenState extends State<TenDigitCodeScreen> {
                         );
                       }
                     },
-                    style: ElevatedButton.styleFrom(
+                    style: OutlinedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(6),
                       ),

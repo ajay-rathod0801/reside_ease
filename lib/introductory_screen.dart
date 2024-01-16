@@ -5,10 +5,10 @@ class IntroductoryScreen extends StatefulWidget {
   const IntroductoryScreen({Key? key}) : super(key: key);
 
   @override
-  _IntroductoryScreenState createState() => _IntroductoryScreenState();
+  IntroductoryScreenState createState() => IntroductoryScreenState();
 }
 
-class _IntroductoryScreenState extends State<IntroductoryScreen> {
+class IntroductoryScreenState extends State<IntroductoryScreen> {
   bool isButtonClicked = false;
 
   @override

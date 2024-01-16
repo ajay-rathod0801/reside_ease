@@ -124,7 +124,7 @@ class OtpScreenState extends State<OtpScreen> {
                         );
                       }
                     },
-                    style: ElevatedButton.styleFrom(
+                    style: OutlinedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(6),
                       ),
