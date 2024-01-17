@@ -28,7 +28,8 @@ class _NavigationExampleState extends State<BottomNavigation> {
           label: 'Home',
         ),
         NavigationDestination(
-          icon: Badge(child: Icon(Icons.hive_rounded)),
+          selectedIcon: Icon(Icons.hive_rounded),
+          icon: Badge(child: Icon(Icons.hive_outlined)),
           label: 'Community',
         ),
         NavigationDestination(
