@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:reside_ease/home_screen.dart';
+import 'package:reside_ease/widgets/CommunityTabBar.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({Key? key}) : super(key: key);
@@ -18,6 +20,19 @@ class _NavigationExampleState extends State<BottomNavigation> {
         setState(() {
           currentPageIndex = index;
         });
+        if (index == 0) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const HomeScreen()),
+          );
+        }
+        if (index == 1) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const MyTabBar()),
+          );
+        }
+
       },
       indicatorColor: Colors.blue.shade200,
       selectedIndex: currentPageIndex,
