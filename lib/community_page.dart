@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:reside_ease/widgets/bottom_navigation.dart';
 import 'package:reside_ease/community_event_page.dart';
 import 'package:reside_ease/widgets/top_appbar.dart';
+import 'package:reside_ease/community_notice_board.dart';
 
 class CommunityPage extends StatelessWidget {
   const CommunityPage({super.key});
@@ -41,9 +42,7 @@ class CommunityPage extends StatelessWidget {
                     child: Text("Posts"),
                   ),
                   CommunityEvent(),
-                  Center(
-                    child: Text("Notice Board"),
-                  ),
+                  CommunityNotice()
                 ],
               ),
             ),

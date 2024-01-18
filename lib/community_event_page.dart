@@ -8,7 +8,7 @@ class CommunityEvent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
           body: ListView(
-            padding: EdgeInsets.all(8),
+            padding: const EdgeInsets.all(8),
             children: [
               CardEvents(
                 imageUrl: 'https://images.unsplash.com/photo-1504805572947-34fad45aed93?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
@@ -21,7 +21,7 @@ class CommunityEvent extends StatelessWidget {
                   // Add learn more logic here
                 },
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               CardEvents(
                 imageUrl: 'https://images.unsplash.com/photo-1683009427666-340595e57e43?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                 title: 'Scuba Diving in the Carribean 🏝️',
@@ -33,7 +33,7 @@ class CommunityEvent extends StatelessWidget {
                   // Add learn more logic here
                 },
               ),
-                            SizedBox(height: 8),
+                            const SizedBox(height: 8),
 
               CardEvents(
                 imageUrl: 'https://images.unsplash.com/photo-1682685797527-63b4e495938f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
@@ -46,7 +46,7 @@ class CommunityEvent extends StatelessWidget {
                   // Add learn more logic here
                 },
               ),
-                            SizedBox(height: 8),
+                            const SizedBox(height: 8),
 
               CardEvents(
                 imageUrl: 'https://images.unsplash.com/photo-1682685797366-715d29e33f9d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
