@@ -19,7 +19,7 @@ class CardEvents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 5,
+      // elevation: 5,
       color: Colors.yellow.shade100,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
@@ -46,6 +46,14 @@ class CardEvents extends StatelessWidget {
               child: Align(
                 alignment: Alignment.topRight,
                 child: IconButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(
+                      Colors.black.withOpacity(0.5),
+                    ),
+                    shape: MaterialStateProperty.all(
+                      const CircleBorder(),
+                    ),
+                  ),
                   icon: const Icon(
                     Icons.bookmark_border,
                     color: Colors.white,
@@ -73,6 +81,8 @@ class CardEvents extends StatelessWidget {
                 fontSize: 16,
                 fontWeight: FontWeight.w400,
               ),
+              maxLines: 4,
+              overflow: TextOverflow.ellipsis,
             ),
             const SizedBox(
               height: 10,

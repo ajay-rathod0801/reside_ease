@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:reside_ease/home_screen.dart';
-import 'package:reside_ease/introductory_screen.dart';
+// import 'package:reside_ease/introductory_screen.dart';
+
+// import 'widgets/community_tab_bar.dart';
 // import 'package:reside_ease/otp_screen.dart';
 // import 'package:reside_ease/introductory_screen.dart';
 // import 'package:reside_ease/widgets/top_appbar.dart';
@@ -25,16 +27,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-// uncomment for bottom navigation bar
-// class MyHomePage extends StatelessWidget {
-//   const MyHomePage({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return const Scaffold(
-//       body: IntroductoryScreen(),
-//       bottomNavigationBar: BottomNavigation(),
-//     );
-//   }
-// }
