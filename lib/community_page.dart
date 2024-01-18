@@ -3,8 +3,8 @@ import 'package:reside_ease/widgets/bottom_navigation.dart';
 import 'package:reside_ease/community_event_page.dart';
 import 'package:reside_ease/widgets/top_appbar.dart';
 
-class MyTabBar extends StatelessWidget {
-  const MyTabBar({super.key});
+class CommunityPage extends StatelessWidget {
+  const CommunityPage({super.key});
 
   @override
   Widget build(BuildContext context) {

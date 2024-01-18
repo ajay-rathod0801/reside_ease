@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:reside_ease/home_screen.dart';
-import 'package:reside_ease/widgets/community_tab_bar.dart';
+import 'package:reside_ease/community_page.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({Key? key}) : super(key: key);
@@ -32,7 +32,7 @@ class _NavigationExampleState extends State<BottomNavigation> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const MyTabBar(),
+              builder: (context) => const CommunityPage(),
             ),
           );
         }
