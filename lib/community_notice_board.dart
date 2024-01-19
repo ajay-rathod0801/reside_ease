@@ -8,7 +8,10 @@ class CommunityNotice extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.only(
+          left: 8,
+          right: 8,
+        ),
         children: [
           CardNotice(
             title: 'Event Announcements',
