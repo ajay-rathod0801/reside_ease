@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-import 'package:reside_ease/home_screen.dart';
 import 'package:reside_ease/widgets/bottom_navigation.dart';
 
 class TenDigitCodeScreen extends StatefulWidget {

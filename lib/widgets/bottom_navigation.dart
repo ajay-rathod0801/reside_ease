@@ -3,13 +3,18 @@ import 'package:reside_ease/home_screen.dart';
 import 'package:reside_ease/community_page.dart';
 
 class ParentWidget extends StatefulWidget {
+  const ParentWidget({super.key});
+
   @override
-  _ParentWidgetState createState() => _ParentWidgetState();
+  ParentWidgetState createState() => ParentWidgetState();
 }
 
-class _ParentWidgetState extends State<ParentWidget> {
+class ParentWidgetState extends State<ParentWidget> {
   int currentPageIndex = 0;
-  final List<Widget> pages = [HomeScreen(), CommunityPage()];
+  final List<Widget> pages = [
+    HomeScreen(),
+    CommunityPage(),
+    ];
 
   void changePage(int index) {
     setState(() {
@@ -33,7 +38,7 @@ class BottomNavigation extends StatelessWidget {
   final int selectedIndex;
   final ValueChanged<int> onIndexSelected;
 
-  BottomNavigation({
+  const BottomNavigation({
     Key? key,
     required this.selectedIndex,
     required this.onIndexSelected,
