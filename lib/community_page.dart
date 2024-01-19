@@ -57,7 +57,7 @@ class CommunityPage extends StatelessWidget {
             ),
           ],
         ),
-        bottomNavigationBar: const BottomNavigation(),
+        // bottomNavigationBar: ParentWidget(),
       ),
     );
   }

@@ -2,43 +2,46 @@ import 'package:flutter/material.dart';
 import 'package:reside_ease/home_screen.dart';
 import 'package:reside_ease/community_page.dart';
 
-class BottomNavigation extends StatefulWidget {
-  const BottomNavigation({Key? key}) : super(key: key);
-
+class ParentWidget extends StatefulWidget {
   @override
-  State<BottomNavigation> createState() => _NavigationExampleState();
+  _ParentWidgetState createState() => _ParentWidgetState();
 }
 
-class _NavigationExampleState extends State<BottomNavigation> {
+class _ParentWidgetState extends State<ParentWidget> {
   int currentPageIndex = 0;
+  final List<Widget> pages = [HomeScreen(), CommunityPage()];
+
+  void changePage(int index) {
+    setState(() {
+      currentPageIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: pages[currentPageIndex],
+      bottomNavigationBar: BottomNavigation(
+        selectedIndex: currentPageIndex,
+        onIndexSelected: changePage,
+      ),
+    );
+  }
+}
+
+class BottomNavigation extends StatelessWidget {
+  final int selectedIndex;
+  final ValueChanged<int> onIndexSelected;
+
+  BottomNavigation({
+    Key? key,
+    required this.selectedIndex,
+    required this.onIndexSelected,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return NavigationBar(
-      backgroundColor: Colors.white,
-      onDestinationSelected: (int index) {
-        setState(() {
-          currentPageIndex = index;
-        });
-        if (index == 0) {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const HomeScreen(),
-            ),
-          );
-        }
-        if (index == 1) {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const CommunityPage(),
-            ),
-          );
-        }
-      },
-      indicatorColor: Colors.blue.shade200,
-      selectedIndex: currentPageIndex,
       destinations: const <Widget>[
         NavigationDestination(
           selectedIcon: Icon(Icons.home),
@@ -56,6 +59,10 @@ class _NavigationExampleState extends State<BottomNavigation> {
           label: 'Profile',
         ),
       ],
+      backgroundColor: Colors.white,
+      onDestinationSelected: onIndexSelected,
+      indicatorColor: Colors.blue.shade200,
+      selectedIndex: selectedIndex,
     );
   }
 }
