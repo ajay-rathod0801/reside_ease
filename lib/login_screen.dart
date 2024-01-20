@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:dio/dio.dart';
+
 import 'package:reside_ease/otp_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -17,11 +19,11 @@ class LoginScreenState extends State<LoginScreen> {
 
   // create a text editing controller
   final _usernameController = TextEditingController();
-  final _passwordController = TextEditingController();
 
   // create a focus node
   final _usernameFocusNode = FocusNode();
-  final _passwordFocusNode = FocusNode();
+
+  final Dio _dio = Dio();
 
   @override
   void initState() {
@@ -37,13 +39,27 @@ class LoginScreenState extends State<LoginScreen> {
   @override
   void dispose() {
     _usernameController.dispose();
-    _passwordController.dispose();
 
     // dispose the focus nodes
     _usernameFocusNode.dispose();
-    _passwordFocusNode.dispose();
 
     super.dispose();
+  }
+
+  Future<void> _login() async{
+    try{
+      final response = await _dio.post(
+        // To be replaced by actual API URL
+        'https://api.resideease.com/api/v1/auth/login',
+        data: {
+          'username': _usernameController.text,
+        },
+      );
+      print(response.data);
+        } on DioException catch (e) {
+      print(e.response!.data);
+      
+    }
   }
 
   @override
@@ -103,6 +119,7 @@ class LoginScreenState extends State<LoginScreen> {
                   OutlinedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
+                        _login();
                         Navigator.push(
                           context,
                           MaterialPageRoute(
