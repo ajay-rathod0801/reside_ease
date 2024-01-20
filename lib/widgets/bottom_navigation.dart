@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:reside_ease/home_screen.dart';
 import 'package:reside_ease/community_page.dart';
+import 'package:reside_ease/profile_page.dart';
 
 class ParentWidget extends StatefulWidget {
   const ParentWidget({super.key});
@@ -14,6 +15,8 @@ class ParentWidgetState extends State<ParentWidget> {
   final List<Widget> pages = [
     HomeScreen(),
     CommunityPage(),
+    ProfilePage(),
+
     ];
 
   void changePage(int index) {

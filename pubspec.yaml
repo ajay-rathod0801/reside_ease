@@ -76,6 +76,7 @@ flutter:
     - assets/icons/emergency.png
     - assets/icons/residentdir.png
     - assets/icons/budget.png
+    - assets/profile_image.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
