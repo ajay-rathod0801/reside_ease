@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:reside_ease/widgets/bottom_navigation.dart';
 import 'package:reside_ease/community_event_page.dart';
@@ -7,10 +9,9 @@ import 'package:reside_ease/community_notice_board.dart';
 class CommunityPage extends StatelessWidget {
   const CommunityPage({super.key});
 
-
   @override
   Widget build(BuildContext context) {
-    return  DefaultTabController(
+    return DefaultTabController(
       length: 3,
       child: Scaffold(
         appBar: const TopAppBar(),
@@ -18,14 +19,14 @@ class CommunityPage extends StatelessWidget {
           children: [
             Material(
               color: Colors.transparent,
-              child:  Padding(
-                padding: const EdgeInsets.only(left:15.0, right: 15.0, top: 5.0, bottom: 5.0),
+              child: Padding(
+                padding: const EdgeInsets.only(
+                    left: 15.0, right: 15.0, top: 5.0, bottom: 5.0),
                 child: TabBar(
                   indicatorColor: Colors.blue.shade900,
                   labelColor: Colors.white,
                   unselectedLabelColor: Colors.black54,
                   indicatorSize: TabBarIndicatorSize.tab,
-                  dividerHeight: 0,
                   indicator: BoxDecoration(
                     color: Colors.blue.shade900,
                     borderRadius: BorderRadius.circular(8),
