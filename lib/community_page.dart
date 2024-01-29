@@ -19,12 +19,17 @@ class CommunityPage extends StatelessWidget {
               color: Colors.transparent,
               child: Padding(
                 padding: const EdgeInsets.only(
-                    left: 15.0, right: 15.0, top: 5.0, bottom: 5.0),
+                  left: 15.0,
+                  right: 15.0,
+                  top: 5.0,
+                  bottom: 5.0,
+                ),
                 child: TabBar(
                   indicatorColor: Colors.blue.shade900,
                   labelColor: Colors.white,
                   unselectedLabelColor: Colors.black54,
                   indicatorSize: TabBarIndicatorSize.tab,
+                  dividerHeight: 0,
                   indicator: BoxDecoration(
                     color: Colors.blue.shade900,
                     borderRadius: BorderRadius.circular(8),
