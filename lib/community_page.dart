@@ -1,5 +1,3 @@
-// ignore_for_file: unused_import
-
 import 'package:flutter/material.dart';
 import 'package:reside_ease/widgets/bottom_navigation.dart';
 import 'package:reside_ease/community_event_page.dart';
