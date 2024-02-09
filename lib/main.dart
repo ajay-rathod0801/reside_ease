@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:reside_ease/introductory_screen.dart';
 
-import 'package:reside_ease/widgets/bottom_navigation.dart';
-
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -16,7 +14,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: const Color.fromRGBO(249, 249, 255, 1),
       ),
-      home: IntroductoryScreen(),
+      home: const IntroductoryScreen(),
     );
   }
 }

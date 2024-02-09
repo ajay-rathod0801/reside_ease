@@ -46,8 +46,8 @@ class LoginScreenState extends State<LoginScreen> {
     super.dispose();
   }
 
-  Future<void> _login() async{
-    try{
+  Future<void> _login() async {
+    try {
       final response = await _dio.post(
         // To be replaced by actual API URL
         'https://api.resideease.com/api/v1/auth/login',
@@ -56,9 +56,8 @@ class LoginScreenState extends State<LoginScreen> {
         },
       );
       print(response.data);
-        } on DioException catch (e) {
+    } on DioException catch (e) {
       print(e.response!.data);
-      
     }
   }
 
@@ -87,31 +86,41 @@ class LoginScreenState extends State<LoginScreen> {
                   const SizedBox(
                     height: 50,
                   ),
-                  TextFormField(
-                    controller: _usernameController,
-                    focusNode: _usernameFocusNode,
-                    decoration: const InputDecoration(
-                      labelText: 'Enter Phone Number or Email ID',
+                  Theme(
+                    data: Theme.of(context).copyWith(
+                      colorScheme: Theme.of(context)
+                          .colorScheme
+                          .copyWith(primary: Colors.blue),
                     ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter a phone number or email ID';
-                      }
-                      // regex pattern for email
-                      String emailPattern =
-                          r'^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$';
-                      RegExp emailRegex = RegExp(emailPattern);
+                    child: TextFormField(
+                      controller: _usernameController,
+                      focusNode: _usernameFocusNode,
+                      decoration: InputDecoration(
+                        labelText: 'Enter Phone Number or Email ID',
+                        filled: true,
+                        fillColor: Colors.blue.shade50,
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter a phone number or email ID';
+                        }
+                        // regex pattern for email
+                        String emailPattern =
+                            r'^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$';
+                        RegExp emailRegex = RegExp(emailPattern);
 
-                      // regex pattern for phone number (Indian format)
-                      String phonePattern = r'^[6-9]\d{9}$';
-                      RegExp phoneRegex = RegExp(phonePattern);
+                        // regex pattern for phone number (Indian format)
+                        String phonePattern = r'^[6-9]\d{9}$';
+                        RegExp phoneRegex = RegExp(phonePattern);
 
-                      if (!emailRegex.hasMatch(value) &&
-                          !phoneRegex.hasMatch(value)) {
-                        return 'Please enter a valid phone number or email ID';
-                      }
-                      return null;
-                    },
+                        if (!emailRegex.hasMatch(value) &&
+                            !phoneRegex.hasMatch(value)) {
+                          return 'Please enter a valid phone number or email ID';
+                        }
+                        return null;
+                      },
+                      cursorColor: Colors.black,
+                    ),
                   ),
                   const SizedBox(
                     height: 20,
