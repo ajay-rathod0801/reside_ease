@@ -25,7 +25,13 @@ class ProfilePage extends StatelessWidget {
                 },
               ),
               _buildProfileDetails(),
-              _buildEditProfileButton(() {}),
+              _buildEditProfileButton(() {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text('Edit Profile Clicked'),
+                  ),
+                );
+              }),
               _buildSmallCard(
                 title: 'Flat Members',
                 onTap: () {
@@ -75,7 +81,7 @@ class ProfilePage extends StatelessWidget {
             shape: BoxShape.circle,
             image: DecorationImage(
               image: AssetImage('assets/profile_image.png'),
-              fit: BoxFit.fill,
+              fit: BoxFit.scaleDown,
             ),
             boxShadow: [
               BoxShadow(
@@ -173,10 +179,14 @@ class ProfilePage extends StatelessWidget {
               width: 24,
               height: 24,
               decoration: const BoxDecoration(
-                color: Color(0xFFD9D9D9),
+                image: DecorationImage(
+                  image: AssetImage('assets/icons/img.png'),
+                  fit: BoxFit.scaleDown,
+                ),
+                // color: Color(0xFFD9D9D9),
               ),
             ),
-            const SizedBox(width: 8),
+            const SizedBox(width: 9),
             const Text(
               'Edit Profile',
               style: TextStyle(color: Colors.black),
