@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: const Color.fromRGBO(249, 249, 255, 1),
       ),
-      home: const FlatMembers(),
+      home: MembersScreen(),
     );
   }
 }
