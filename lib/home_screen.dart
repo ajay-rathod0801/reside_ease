@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:reside_ease/widgets/bottom_navigation.dart';
 import 'package:reside_ease/widgets/card_big.dart';
 import 'package:reside_ease/widgets/card_small.dart';
 import 'package:reside_ease/widgets/horizontal_card.dart';
 import 'package:reside_ease/widgets/top_appbar.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   // static const String routeName = '/home';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: TopAppBar(),
+      appBar: const TopAppBar(),
       body: Padding(
-        padding: EdgeInsets.only(
+        padding: const EdgeInsets.only(
           left: 16.0,
           right: 16.0,
         ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:reside_ease/widgets/bottom_navigation.dart';
 import 'package:reside_ease/community_event_page.dart';
 import 'package:reside_ease/widgets/top_appbar.dart';
 import 'package:reside_ease/community_notice_board.dart';
