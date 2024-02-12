@@ -59,7 +59,19 @@ class _AddingHomeState extends State<AddingHome> {
                                       height: 8,
                                     ),
                                     Text(
-                                      '${Homes['Tower/Bunglow']} ${Homes['Flat Number']}',
+                                      '${Homes['Tower']} - ${Homes['Flat Number']}',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                      ),
+                                    ),
+                                    Text(
+                                      '${Homes['City']}',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                      ),
+                                    ),
+                                    Text(
+                                      '${Homes['Occupancy Status']}',
                                       style: TextStyle(
                                         fontSize: 16,
                                       ),
@@ -95,9 +107,9 @@ class _AddingHomeState extends State<AddingHome> {
                       Homes.add({
                         'City': result['City'],
                         'Society': result['Society'],
-                        'Tower/Bunglow': result['Tower/Bunglow'],
+                        'Tower': result['Tower'],
                         'Flat Number': result['Flat Number'],
-                        'Occupency Status': result['Occupency Status'],
+                        'Occupancy Status': result['Occupancy Status'],
                       });
                     });
                   }

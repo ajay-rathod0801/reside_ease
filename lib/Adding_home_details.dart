@@ -6,7 +6,11 @@ class AddingHomeDetails extends StatefulWidget {
 }
 
 class _AddingHomeDetailsState extends State<AddingHomeDetails> {
-  String? _dropdownValue;
+  String? _dropdownValueCity;
+  String? _dropdownValueSociety;
+  String? _dropdownValueTower;
+  String? _dropdownValueFlatNumber;
+  String? _dropdownValueOccupancyStatus;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +27,7 @@ class _AddingHomeDetailsState extends State<AddingHomeDetails> {
               height: 50,
             ),
             DropdownButtonFormField<String>(
-              value: _dropdownValue,
+              value: _dropdownValueCity,
               decoration: InputDecoration(
                 labelText: 'City',
                 hintText: 'Select Your City',
@@ -34,7 +38,7 @@ class _AddingHomeDetailsState extends State<AddingHomeDetails> {
               ),
               onChanged: (String? newValue) {
                 setState(() {
-                  _dropdownValue = newValue;
+                  _dropdownValueCity = newValue;
                 });
               },
               items: <String>[
@@ -55,7 +59,7 @@ class _AddingHomeDetailsState extends State<AddingHomeDetails> {
               height: 20,
             ),
             DropdownButtonFormField<String>(
-              value: _dropdownValue,
+              value: _dropdownValueSociety,
               decoration: InputDecoration(
                 labelText: 'Society',
                 hintText: 'Select Your Society',
@@ -66,7 +70,7 @@ class _AddingHomeDetailsState extends State<AddingHomeDetails> {
               ),
               onChanged: (String? newValue) {
                 setState(() {
-                  _dropdownValue = newValue;
+                  _dropdownValueSociety = newValue;
                 });
               },
               items: <String>[
@@ -86,10 +90,10 @@ class _AddingHomeDetailsState extends State<AddingHomeDetails> {
               height: 20,
             ),
             DropdownButtonFormField<String>(
-              value: _dropdownValue,
+              value: _dropdownValueTower,
               decoration: InputDecoration(
-                labelText: 'Tower/Bunglow',
-                hintText: 'Select Your Tower/Bunglow',
+                labelText: 'Tower',
+                hintText: 'Select Your Tower',
                 filled: true,
                 fillColor: Colors.blue.shade50,
                 focusColor: Colors.black,
@@ -97,7 +101,7 @@ class _AddingHomeDetailsState extends State<AddingHomeDetails> {
               ),
               onChanged: (String? newValue) {
                 setState(() {
-                  _dropdownValue = newValue;
+                  _dropdownValueTower = newValue;
                 });
               },
               items: <String>['Wing A', 'Wing B', 'Wing C', 'Wing D', 'Wing E']
@@ -112,7 +116,7 @@ class _AddingHomeDetailsState extends State<AddingHomeDetails> {
               height: 20,
             ),
             DropdownButtonFormField<String>(
-              value: _dropdownValue,
+              value: _dropdownValueFlatNumber,
               decoration: InputDecoration(
                 labelText: 'Flat Number',
                 hintText: 'Select Your Flat Number',
@@ -123,7 +127,7 @@ class _AddingHomeDetailsState extends State<AddingHomeDetails> {
               ),
               onChanged: (String? newValue) {
                 setState(() {
-                  _dropdownValue = newValue;
+                  _dropdownValueFlatNumber = newValue;
                 });
               },
               items: <String>['101', '102', '103', '104', '105']
@@ -138,9 +142,9 @@ class _AddingHomeDetailsState extends State<AddingHomeDetails> {
               height: 20,
             ),
             DropdownButtonFormField<String>(
-              value: _dropdownValue,
+              value: _dropdownValueOccupancyStatus,
               decoration: InputDecoration(
-                labelText: 'Occupency Status',
+                labelText: 'Occupancy Status',
                 hintText: 'Select Your Status',
                 filled: true,
                 fillColor: Colors.blue.shade50,
@@ -149,7 +153,7 @@ class _AddingHomeDetailsState extends State<AddingHomeDetails> {
               ),
               onChanged: (String? newValue) {
                 setState(() {
-                  _dropdownValue = newValue;
+                  _dropdownValueOccupancyStatus = newValue;
                 });
               },
               items: <String>['Currently Residing', 'Moving In']
@@ -176,11 +180,11 @@ class _AddingHomeDetailsState extends State<AddingHomeDetails> {
               ),
               onPressed: () {
                 Navigator.pop(context, {
-                  'City': _dropdownValue,
-                  'Society': _dropdownValue,
-                  'Tower/bunglow': _dropdownValue,
-                  'Flat Number': _dropdownValue,
-                  'Occupency Status': _dropdownValue,
+                  'City': _dropdownValueCity,
+                  'Society': _dropdownValueSociety,
+                  'Tower': _dropdownValueTower,
+                  'Flat Number': _dropdownValueFlatNumber,
+                  'Occupancy Status': _dropdownValueOccupancyStatus,
                 });
               },
               child: const Text(
