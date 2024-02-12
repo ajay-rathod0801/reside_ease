@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:reside_ease/widgets/top_appbar.dart';
-
+import 'package:reside_ease/editProfile.dart';
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
@@ -26,9 +26,10 @@ class ProfilePage extends StatelessWidget {
               ),
               _buildProfileDetails(),
               _buildEditProfileButton(() {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('Edit Profile Clicked'),
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const EditProfile(),
                   ),
                 );
               }),
@@ -181,9 +182,8 @@ class ProfilePage extends StatelessWidget {
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/icons/img.png'),
-                  fit: BoxFit.scaleDown,
+                  fit: BoxFit.none,
                 ),
-                // color: Color(0xFFD9D9D9),
               ),
             ),
             const SizedBox(width: 9),
