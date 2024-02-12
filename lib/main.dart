@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reside_ease/Adding_home.dart';
+import 'package:reside_ease/adding_home.dart';
 import 'package:reside_ease/introductory_screen.dart';
 
 import 'package:reside_ease/widgets/bottom_navigation.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reside_ease/Adding_home_details.dart';
+import 'package:reside_ease/adding_home_details.dart';
 
 class AddingHome extends StatefulWidget {
   const AddingHome({super.key});
