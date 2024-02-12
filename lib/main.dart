@@ -13,10 +13,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Login Screen',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorSchemeSeed: Colors.blue,
         scaffoldBackgroundColor: const Color.fromRGBO(249, 249, 255, 1),
       ),
-      home: MembersScreen(),
+      home: const MembersScreen(),
     );
   }
 }

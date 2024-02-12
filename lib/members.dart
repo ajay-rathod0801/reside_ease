@@ -46,23 +46,38 @@ class _MembersScreenState extends State<MembersScreen> {
                               color: Colors.blue.shade50,
                               child: Padding(
                                 padding: EdgeInsets.all(16.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text(
-                                      '${member['firstName']} ${member['middleName']} ${member['lastName']}',
-                                      style: TextStyle(
-                                        fontSize: 22,
-                                      ),
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          '${member['firstName']} ${member['middleName']} ${member['lastName']}',
+                                          style: TextStyle(
+                                            fontSize: 22,
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          height: 8,
+                                        ),
+                                        Text(
+                                          '${member['relation']}',
+                                          style: TextStyle(
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                      ],
                                     ),
-                                    const SizedBox(
-                                      height: 8,
-                                    ),
-                                    Text(
-                                      '${member['relation']}',
-                                      style: TextStyle(
-                                        fontSize: 16,
-                                      ),
+                                    IconButton(
+                                      icon: Icon(Icons.delete),
+                                      onPressed: () {
+                                        setState(() {
+                                          members.remove(member);
+                                        });
+                                      },
                                     ),
                                   ],
                                 ),
