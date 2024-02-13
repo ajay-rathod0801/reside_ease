@@ -76,6 +76,14 @@ class _AddingHomeState extends State<AddingHome> {
                                         fontSize: 16,
                                       ),
                                     ),
+                                    IconButton(
+                                      icon: Icon(Icons.delete),
+                                      onPressed: () {
+                                        setState(() {
+                                          Homes.remove(Homes);
+                                        });
+                                      },
+                                    ),
                                   ],
                                 ),
                               ),
