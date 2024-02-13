@@ -18,6 +18,12 @@ class TopAppBar extends StatelessWidget implements PreferredSizeWidget {
           );
         },
       ),
+      title: const Text(
+        'Hello',
+        style: TextStyle(
+          fontWeight: FontWeight.w600,
+        ),
+      ),
       actions: <Widget>[
         IconButton(
           icon: const Icon(Icons.add_alert, color: Colors.black),

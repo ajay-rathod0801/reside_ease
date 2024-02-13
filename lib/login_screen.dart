@@ -46,20 +46,20 @@ class LoginScreenState extends State<LoginScreen> {
     super.dispose();
   }
 
-  Future<void> _login() async {
-    try {
-      final response = await _dio.post(
-        // To be replaced by actual API URL
-        'https://api.resideease.com/api/v1/auth/login',
-        data: {
-          'username': _usernameController.text,
-        },
-      );
-      print(response.data);
-    } on DioException catch (e) {
-      print(e.response!.data);
-    }
-  }
+  // Future<void> _login() async {
+  //   try {
+  //     final response = await _dio.post(
+  //       // To be replaced by actual API URL
+  //       'https://api.resideease.com/api/v1/auth/login',
+  //       data: {
+  //         'username': _usernameController.text,
+  //       },
+  //     );
+  //     print(response.data);
+  //   } on DioException catch (e) {
+  //     print(e.response!.data);
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +77,7 @@ class LoginScreenState extends State<LoginScreen> {
                     height: 180,
                   ),
                   const Text(
-                    'Login or Sign up',
+                    'Sign up to Reside-Ease',
                     style: TextStyle(
                       fontSize: 32,
                       fontWeight: FontWeight.w600,
@@ -128,11 +128,13 @@ class LoginScreenState extends State<LoginScreen> {
                   OutlinedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        _login();
+                        // _login();
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const OtpScreen(),
+                            builder: (context) => OtpScreen(
+                              phoneNumber: _usernameController.text,
+                            ),
                           ),
                         );
                       }

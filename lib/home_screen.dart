@@ -22,18 +22,21 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const SizedBox(
+                height: 10.0,
+              ),
+              const Text(
                 'Home Overview',
                 style: TextStyle(fontSize: 32, fontWeight: FontWeight.w500),
               ),
-              SizedBox(height: 16),
-              HorizontalCard(
+              const SizedBox(height: 16),
+              const HorizontalCard(
                 title: 'Notify your security',
                 subtitle: 'Pre-approve your guests, deliveries & more',
                 image: 'assets/icons/avatar.png',
               ),
-              SizedBox(height: 8),
-              SingleChildScrollView(
+              const SizedBox(height: 8),
+              const SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
@@ -63,12 +66,12 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 16),
-              Text(
+              const SizedBox(height: 16),
+              const Text(
                 'Settle your Expenses',
                 style: TextStyle(fontSize: 32, fontWeight: FontWeight.w500),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Row(
                 children: [
                   Row(
@@ -81,7 +84,7 @@ class HomeScreen extends StatelessWidget {
                         cardColor: Colors.purple.shade50,
                         containerColor: Colors.purple.shade100,
                       ),
-                      SizedBox(width: 3),
+                      const SizedBox(width: 3),
                       CardBig(
                         title: 'Bill Tabs',
                         image: 'assets/icons/bill.png',
@@ -93,12 +96,12 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 16),
-              Text(
+              const SizedBox(height: 16),
+              const Text(
                 'For your Oversight',
                 style: TextStyle(fontSize: 32, fontWeight: FontWeight.w500),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Row(
                 children: [
                   Expanded(
@@ -110,7 +113,7 @@ class HomeScreen extends StatelessWidget {
                       containerColor: Colors.yellow.shade300,
                     ),
                   ),
-                  SizedBox(width: 8),
+                  const SizedBox(width: 8),
                   Expanded(
                     child: CardBig(
                       title: 'Domestic Staff',
@@ -122,7 +125,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Row(
                 children: [
                   Expanded(
@@ -134,7 +137,7 @@ class HomeScreen extends StatelessWidget {
                       containerColor: Colors.yellow.shade300,
                     ),
                   ),
-                  SizedBox(width: 8),
+                  const SizedBox(width: 8),
                   Expanded(
                     child: CardBig(
                       title: 'Emergency Numbers',
@@ -146,12 +149,12 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 16),
-              Text(
+              const SizedBox(height: 16),
+              const Text(
                 'For your Community',
                 style: TextStyle(fontSize: 32, fontWeight: FontWeight.w500),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Row(
                 children: [
                   Row(
@@ -164,7 +167,7 @@ class HomeScreen extends StatelessWidget {
                         cardColor: Colors.green.shade100,
                         containerColor: Colors.green.shade300,
                       ),
-                      SizedBox(width: 3),
+                      const SizedBox(width: 3),
                       CardBig(
                         title: 'Society Budget',
                         image: 'assets/icons/budget.png',

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:reside_ease/login_screen.dart';
 
 class IntroductoryScreen extends StatefulWidget {
-  const IntroductoryScreen({Key? key}) : super(key: key);
+  const IntroductoryScreen({super.key});
 
   @override
   IntroductoryScreenState createState() => IntroductoryScreenState();
