@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
-class EditProfile extends StatelessWidget {
+class EditProfile extends StatefulWidget {
   const EditProfile({super.key});
+
+  @override
+  _EditProfileState createState() => _EditProfileState();
+}
+
+class _EditProfileState extends State<EditProfile> {
+  String? _selectedGender;
 
   @override
   Widget build(BuildContext context) {
@@ -78,68 +85,90 @@ class EditProfile extends StatelessWidget {
               ),
             ),
             SizedBox(height: screenHeight * 0.05),
-            TextField(
-              decoration: InputDecoration(
-                labelText: 'Name',
-                labelStyle: TextStyle(
-                  fontFamily: 'Roboto',
-                  fontWeight: FontWeight.w500,
-                  fontSize: screenWidth * 0.03055,
-                  color: Colors.black,
-                ),
-                filled: true,
-                fillColor: Colors.blue.shade50,
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.black),
-                  borderRadius: BorderRadius.circular(screenWidth * 0.01667),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.black),
-                  borderRadius: BorderRadius.circular(screenWidth * 0.01667),
-                ),
-              ),
-            ),
-            SizedBox(height: screenHeight * 0.025),
-            TextField(
-              decoration: InputDecoration(
-                labelText: 'Gender',
-                labelStyle: TextStyle(
-                  fontFamily: 'Roboto',
-                  fontWeight: FontWeight.w500,
-                  fontSize: screenWidth * 0.03055,
-                  color: Colors.black,
-                ),
-                filled: true,
-                fillColor: Colors.blue.shade50,
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.black),
-                  borderRadius: BorderRadius.circular(screenWidth * 0.01667),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.black),
-                  borderRadius: BorderRadius.circular(screenWidth * 0.01667),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
+              child: TextField(
+                decoration: InputDecoration(
+                  labelText: 'Name',
+                  labelStyle: TextStyle(
+                    fontFamily: 'Roboto',
+                    fontWeight: FontWeight.w500,
+                    fontSize: screenWidth * 0.03055,
+                    color: Colors.black,
+                  ),
+                  filled: true,
+                  fillColor: Colors.blue.shade50,
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(color: Colors.black),
+                    borderRadius: BorderRadius.circular(screenWidth * 0.01667),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(color: Colors.black),
+                    borderRadius: BorderRadius.circular(screenWidth * 0.01667),
+                  ),
                 ),
               ),
             ),
             SizedBox(height: screenHeight * 0.025),
-            TextField(
-              decoration: InputDecoration(
-                labelText: 'Update Address',
-                labelStyle: TextStyle(
-                  fontFamily: 'Roboto',
-                  fontWeight: FontWeight.w500,
-                  fontSize: screenWidth * 0.03055,
-                  color: Colors.black,
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
+              child: DropdownButtonFormField<String>(
+                decoration: InputDecoration(
+                  labelText: 'Gender',
+                  labelStyle: TextStyle(
+                    fontFamily: 'Roboto',
+                    fontWeight: FontWeight.w500,
+                    fontSize: screenWidth * 0.03055,
+                    color: Colors.black,
+                  ),
+                  filled: true,
+                  fillColor: Colors.blue.shade50,
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(color: Colors.black),
+                    borderRadius: BorderRadius.circular(screenWidth * 0.01667),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(color: Colors.black),
+                    borderRadius: BorderRadius.circular(screenWidth * 0.01667),
+                  ),
                 ),
-                filled: true,
-                fillColor: Colors.blue.shade50,
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.black),
-                  borderRadius: BorderRadius.circular(screenWidth * 0.01667),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.black),
-                  borderRadius: BorderRadius.circular(screenWidth * 0.01667),
+                value: _selectedGender,
+                onChanged: (String? newValue) {
+                  setState(() {
+                    _selectedGender = newValue;
+                  });
+                },
+                items: <String>['Male', 'Female']
+                    .map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              ),
+            ),
+            SizedBox(height: screenHeight * 0.025),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
+              child: TextField(
+                decoration: InputDecoration(
+                  labelText: 'Update Address',
+                  labelStyle: TextStyle(
+                    fontFamily: 'Roboto',
+                    fontWeight: FontWeight.w500,
+                    fontSize: screenWidth * 0.03055,
+                    color: Colors.black,
+                  ),
+                  filled: true,
+                  fillColor: Colors.blue.shade50,
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(color: Colors.black),
+                    borderRadius: BorderRadius.circular(screenWidth * 0.01667),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(color: Colors.black),
+                    borderRadius: BorderRadius.circular(screenWidth * 0.01667),
+                  ),
                 ),
               ),
             ),

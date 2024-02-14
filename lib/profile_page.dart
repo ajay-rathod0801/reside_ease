@@ -182,7 +182,7 @@ class ProfilePage extends StatelessWidget {
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/icons/img.png'),
-                  fit: BoxFit.none,
+                  fit: BoxFit.scaleDown,
                 ),
               ),
             ),
