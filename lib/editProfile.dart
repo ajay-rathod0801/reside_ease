@@ -176,7 +176,7 @@ class _EditProfileState extends State<EditProfile> {
             ElevatedButton.icon(
               onPressed: () {},
               icon: const Icon(Icons.check),
-              label: const Text('Content'),
+              label: const Text('Submit'),
               style: ElevatedButton.styleFrom(
                 primary: Colors.white,
                 onPrimary: const Color(0xFF1E1E1E),
