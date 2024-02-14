@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:reside_ease/widgets/top_appbar.dart';
 import 'package:reside_ease/editProfile.dart';
+
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
@@ -42,6 +43,7 @@ class ProfilePage extends StatelessWidget {
                     ),
                   );
                 },
+                logoImagePath: 'assets/icons/members.png',
               ),
               _buildSmallCard(
                 title: 'Add Home',
@@ -52,6 +54,18 @@ class ProfilePage extends StatelessWidget {
                     ),
                   ); // Handle the Add Home card tap
                 },
+                logoImagePath: 'assets/icons/addHome.png',
+              ),
+              _buildSmallCard(
+                title: 'Saved',
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Saved Clicked'),
+                    ),
+                  );
+                },
+                logoImagePath: 'assets/icons/saved.png',
               ),
               _buildSmallCard(
                 title: 'Settings',
@@ -62,6 +76,18 @@ class ProfilePage extends StatelessWidget {
                     ),
                   ); // Handle the Settings card tap
                 },
+                logoImagePath: 'assets/icons/settings.png',
+              ),
+              _buildLogoutButton(
+                title: 'Logout',
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Logout Clicked'),
+                    ),
+                  ); // Handle the Settings card tap
+                },
+                logoImagePath: 'assets/icons/logout.png',
               ),
             ],
           ),
@@ -181,7 +207,7 @@ class ProfilePage extends StatelessWidget {
               height: 24,
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/icons/img.png'),
+                  image: AssetImage('assets/icons/editProfile.png'),
                   fit: BoxFit.scaleDown,
                 ),
               ),
@@ -197,7 +223,10 @@ class ProfilePage extends StatelessWidget {
     );
   }
 
-  Widget _buildSmallCard({required String title, required VoidCallback onTap}) {
+  Widget _buildSmallCard(
+      {required String title,
+      required VoidCallback onTap,
+      required String logoImagePath}) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
       child: GestureDetector(
@@ -213,7 +242,68 @@ class ProfilePage extends StatelessWidget {
               Container(
                 width: 40,
                 height: 48,
-                decoration: const BoxDecoration(color: Color(0xFFD9D9D9)),
+                decoration: BoxDecoration(
+                  // color: const Color(0xFFD9D9D9),
+                  image: DecorationImage(
+                    image: AssetImage(logoImagePath),
+                    fit: BoxFit.scaleDown,
+                  ),
+                ),
+              ),
+              const SizedBox(width: 25),
+              Container(
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w500,
+                        height: 0.10,
+                        letterSpacing: 0.10,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildLogoutButton(
+      {required String title,
+      required VoidCallback onTap,
+      required String logoImagePath}) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+      child: GestureDetector(
+        onTap: onTap,
+        child: Card(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+          color: const Color(0xFFFF0000),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                width: 40,
+                height: 48,
+                decoration: BoxDecoration(
+                  color: const Color(0xFFFF0000),
+                  image: DecorationImage(
+                    image: AssetImage(logoImagePath),
+                    fit: BoxFit.scaleDown,
+                  ),
+                ),
               ),
               const SizedBox(width: 25),
               Container(
