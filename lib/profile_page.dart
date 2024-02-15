@@ -249,14 +249,17 @@ class ProfilePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(
-                width: 40,
-                height: 48,
-                decoration: BoxDecoration(
-                  // color: const Color(0xFFD9D9D9),
-                  image: DecorationImage(
-                    image: AssetImage(logoImagePath),
-                    fit: BoxFit.scaleDown,
+              Padding(
+                padding: const EdgeInsets.only(left: 10.0),
+                child: Container(
+                  width: 40,
+                  height: 48,
+                  decoration: BoxDecoration(
+                    // color: const Color(0xFFD9D9D9),
+                    image: DecorationImage(
+                      image: AssetImage(logoImagePath),
+                      fit: BoxFit.scaleDown,
+                    ),
                   ),
                 ),
               ),
@@ -304,14 +307,17 @@ class ProfilePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(
-                width: 40,
-                height: 48,
-                decoration: BoxDecoration(
-                  color: const Color(0xFFFF0000),
-                  image: DecorationImage(
-                    image: AssetImage(logoImagePath),
-                    fit: BoxFit.scaleDown,
+              Padding(
+                padding: const EdgeInsets.only(left: 10.0),
+                child: Container(
+                  width: 40,
+                  height: 48,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFFF0000),
+                    image: DecorationImage(
+                      image: AssetImage(logoImagePath),
+                      fit: BoxFit.scaleDown,
+                    ),
                   ),
                 ),
               ),

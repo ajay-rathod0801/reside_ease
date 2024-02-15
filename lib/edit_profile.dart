@@ -43,6 +43,7 @@ class _EditProfileState extends State<EditProfile> {
               width: screenWidth * 0.6,
               height: screenWidth * 0.6,
               decoration: BoxDecoration(
+                shape: BoxShape.circle,
                 image: const DecorationImage(
                   image: AssetImage('assets/profile_image.png'),
                   fit: BoxFit.cover,
@@ -51,7 +52,7 @@ class _EditProfileState extends State<EditProfile> {
                   BoxShadow(
                     offset: Offset(0, screenHeight * 0.11),
                     blurRadius: screenWidth * 0.1,
-                    color: const Color.fromRGBO(0, 0, 0, 0.01),
+                    color: Color.fromARGB(2, 30, 15, 15),
                   ),
                   BoxShadow(
                     offset: Offset(0, screenHeight * 0.0625),
@@ -98,14 +99,6 @@ class _EditProfileState extends State<EditProfile> {
                   ),
                   filled: true,
                   fillColor: Colors.blue.shade50,
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Colors.black),
-                    borderRadius: BorderRadius.circular(screenWidth * 0.01667),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Colors.black),
-                    borderRadius: BorderRadius.circular(screenWidth * 0.01667),
-                  ),
                 ),
               ),
             ),
@@ -123,14 +116,6 @@ class _EditProfileState extends State<EditProfile> {
                   ),
                   filled: true,
                   fillColor: Colors.blue.shade50,
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Colors.black),
-                    borderRadius: BorderRadius.circular(screenWidth * 0.01667),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Colors.black),
-                    borderRadius: BorderRadius.circular(screenWidth * 0.01667),
-                  ),
                 ),
                 value: _selectedGender,
                 onChanged: (String? newValue) {
@@ -161,14 +146,6 @@ class _EditProfileState extends State<EditProfile> {
                   ),
                   filled: true,
                   fillColor: Colors.blue.shade50,
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Colors.black),
-                    borderRadius: BorderRadius.circular(screenWidth * 0.01667),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Colors.black),
-                    borderRadius: BorderRadius.circular(screenWidth * 0.01667),
-                  ),
                 ),
               ),
             ),
@@ -178,8 +155,8 @@ class _EditProfileState extends State<EditProfile> {
               icon: const Icon(Icons.check),
               label: const Text('Submit'),
               style: ElevatedButton.styleFrom(
-                primary: Colors.white,
-                onPrimary: const Color(0xFF1E1E1E),
+                foregroundColor: const Color(0xFF1E1E1E),
+                backgroundColor: Colors.white,
                 side: const BorderSide(color: Color(0xFF1E1E1E)),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(screenWidth * 0.01667),
