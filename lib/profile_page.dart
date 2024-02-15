@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:reside_ease/add_home.dart';
+import 'package:reside_ease/members.dart';
 import 'package:reside_ease/widgets/top_appbar.dart';
 import 'package:reside_ease/edit_profile.dart';
 
@@ -40,9 +42,10 @@ class ProfilePage extends StatelessWidget {
               _buildSmallCard(
                 title: 'Flat Members',
                 onTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Flat Members Clicked'),
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const MembersScreen(),
                     ),
                   );
                 },
@@ -51,11 +54,12 @@ class ProfilePage extends StatelessWidget {
               _buildSmallCard(
                 title: 'Add Home',
                 onTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Add Home Clicked'),
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const AddHome(),
                     ),
-                  ); // Handle the Add Home card tap
+                  );
                 },
                 logoImagePath: 'assets/icons/addHome.png',
               ),

@@ -16,6 +16,7 @@ class _MembersDetailsScreenState extends State<MembersDetailsScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Member Details'),
+        backgroundColor: Colors.blue.shade100,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
