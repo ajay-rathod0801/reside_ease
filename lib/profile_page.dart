@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:reside_ease/widgets/top_appbar.dart';
+import 'package:reside_ease/edit_profile.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -8,7 +9,7 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: const TopAppBar(),
+        // appBar: const TopAppBar(),
         body: Container(
           width: 400,
           height: 800,
@@ -25,7 +26,17 @@ class ProfilePage extends StatelessWidget {
                 },
               ),
               _buildProfileDetails(),
-              _buildEditProfileButton(() {}),
+              _buildEditProfileButton(() {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const EditProfile(),
+                  ),
+                );
+              }),
+              SizedBox(
+                height: 8.0,
+              ),
               _buildSmallCard(
                 title: 'Flat Members',
                 onTap: () {
@@ -35,6 +46,7 @@ class ProfilePage extends StatelessWidget {
                     ),
                   );
                 },
+                logoImagePath: 'assets/icons/members.png',
               ),
               _buildSmallCard(
                 title: 'Add Home',
@@ -45,6 +57,18 @@ class ProfilePage extends StatelessWidget {
                     ),
                   ); // Handle the Add Home card tap
                 },
+                logoImagePath: 'assets/icons/addHome.png',
+              ),
+              _buildSmallCard(
+                title: 'Saved',
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Saved Clicked'),
+                    ),
+                  );
+                },
+                logoImagePath: 'assets/icons/saved.png',
               ),
               _buildSmallCard(
                 title: 'Settings',
@@ -55,6 +79,21 @@ class ProfilePage extends StatelessWidget {
                     ),
                   ); // Handle the Settings card tap
                 },
+                logoImagePath: 'assets/icons/settings.png',
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              _buildLogoutButton(
+                title: 'Logout',
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Logout Clicked'),
+                    ),
+                  ); // Handle the Settings card tap
+                },
+                logoImagePath: 'assets/icons/logout.png',
               ),
             ],
           ),
@@ -75,7 +114,7 @@ class ProfilePage extends StatelessWidget {
             shape: BoxShape.circle,
             image: DecorationImage(
               image: AssetImage('assets/profile_image.png'),
-              fit: BoxFit.fill,
+              fit: BoxFit.scaleDown,
             ),
             boxShadow: [
               BoxShadow(
@@ -156,7 +195,7 @@ class ProfilePage extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: 124,
-        height: 36,
+        height: 40,
         margin: const EdgeInsets.only(left: 120, right: 120),
         clipBehavior: Clip.antiAlias,
         decoration: BoxDecoration(
@@ -173,10 +212,13 @@ class ProfilePage extends StatelessWidget {
               width: 24,
               height: 24,
               decoration: const BoxDecoration(
-                color: Color(0xFFD9D9D9),
+                image: DecorationImage(
+                  image: AssetImage('assets/icons/editProfile.png'),
+                  fit: BoxFit.scaleDown,
+                ),
               ),
             ),
-            const SizedBox(width: 8),
+            const SizedBox(width: 9),
             const Text(
               'Edit Profile',
               style: TextStyle(color: Colors.black),
@@ -187,7 +229,10 @@ class ProfilePage extends StatelessWidget {
     );
   }
 
-  Widget _buildSmallCard({required String title, required VoidCallback onTap}) {
+  Widget _buildSmallCard(
+      {required String title,
+      required VoidCallback onTap,
+      required String logoImagePath}) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
       child: GestureDetector(
@@ -203,7 +248,68 @@ class ProfilePage extends StatelessWidget {
               Container(
                 width: 40,
                 height: 48,
-                decoration: const BoxDecoration(color: Color(0xFFD9D9D9)),
+                decoration: BoxDecoration(
+                  // color: const Color(0xFFD9D9D9),
+                  image: DecorationImage(
+                    image: AssetImage(logoImagePath),
+                    fit: BoxFit.scaleDown,
+                  ),
+                ),
+              ),
+              const SizedBox(width: 25),
+              Container(
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w500,
+                        height: 0.10,
+                        letterSpacing: 0.10,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildLogoutButton(
+      {required String title,
+      required VoidCallback onTap,
+      required String logoImagePath}) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+      child: GestureDetector(
+        onTap: onTap,
+        child: Card(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+          color: const Color(0xFFFF0000),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                width: 40,
+                height: 48,
+                decoration: BoxDecoration(
+                  color: const Color(0xFFFF0000),
+                  image: DecorationImage(
+                    image: AssetImage(logoImagePath),
+                    fit: BoxFit.scaleDown,
+                  ),
+                ),
               ),
               const SizedBox(width: 25),
               Container(
