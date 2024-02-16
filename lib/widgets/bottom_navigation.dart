@@ -16,8 +16,7 @@ class ParentWidgetState extends State<ParentWidget> {
     HomeScreen(),
     CommunityPage(),
     ProfilePage(),
-
-    ];
+  ];
 
   void changePage(int index) {
     setState(() {
@@ -28,7 +27,19 @@ class ParentWidgetState extends State<ParentWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[currentPageIndex],
+      body: Stack(
+        children: pages.map((page) {
+          int index = pages.indexOf(page);
+          return IgnorePointer(
+            ignoring: index != currentPageIndex,
+            child: AnimatedOpacity(
+              opacity: currentPageIndex == index ? 1.0 : 0.0,
+              duration: Duration(milliseconds: 250),
+              child: page,
+            ),
+          );
+        }).toList(),
+      ),
       bottomNavigationBar: BottomNavigation(
         selectedIndex: currentPageIndex,
         onIndexSelected: changePage,

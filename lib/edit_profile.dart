@@ -17,7 +17,7 @@ class _EditProfileState extends State<EditProfile> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFFD7E2FF),
+        backgroundColor: Colors.blue.shade100,
         title: Text(
           'Edit Profile',
           style: TextStyle(
@@ -81,7 +81,7 @@ class _EditProfileState extends State<EditProfile> {
                   fontFamily: 'Roboto',
                   fontWeight: FontWeight.w500,
                   fontSize: screenWidth * 0.03055,
-                  color: const Color(0xFF3060B7),
+                  color: Colors.blue.shade900,
                 ),
               ),
             ),

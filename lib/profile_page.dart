@@ -29,37 +29,22 @@ class ProfilePage extends StatelessWidget {
               ),
               _buildProfileDetails(),
               _buildEditProfileButton(() {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const EditProfile(),
-                  ),
-                );
+                navigateWithTransition(context, const EditProfile());
               }),
               SizedBox(
-                height: 8.0,
+                height: 12.0,
               ),
               _buildSmallCard(
                 title: 'Flat Members',
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const MembersScreen(),
-                    ),
-                  );
+                  navigateWithTransition(context, const MembersScreen());
                 },
                 logoImagePath: 'assets/icons/members.png',
               ),
               _buildSmallCard(
                 title: 'Add Home',
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const AddHome(),
-                    ),
-                  );
+                  navigateWithTransition(context, const AddHome());
                 },
                 logoImagePath: 'assets/icons/addHome.png',
               ),
@@ -102,6 +87,29 @@ class ProfilePage extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  void navigateWithTransition(BuildContext context, Widget destinationPage) {
+    Navigator.push(
+      context,
+      PageRouteBuilder(
+        pageBuilder: (context, animation1, animation2) => destinationPage,
+        transitionDuration: Duration(milliseconds: 300),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          var begin = Offset(1.0, 0.0);
+          var end = Offset.zero;
+          var curve = Curves.ease;
+
+          var tween =
+              Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+          return SlideTransition(
+            position: animation.drive(tween),
+            child: child,
+          );
+        },
       ),
     );
   }
@@ -151,7 +159,6 @@ class ProfilePage extends StatelessWidget {
                 offset: Offset(0, 139),
                 spreadRadius: 0,
               ),
-              // ... (unchanged)
             ],
           ),
         ),
@@ -238,53 +245,56 @@ class ProfilePage extends StatelessWidget {
       required VoidCallback onTap,
       required String logoImagePath}) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 3),
       child: GestureDetector(
         onTap: onTap,
         child: Card(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
-          color: const Color(0xFFD7E2FF),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 10.0),
-                child: Container(
-                  width: 40,
-                  height: 48,
-                  decoration: BoxDecoration(
-                    // color: const Color(0xFFD9D9D9),
-                    image: DecorationImage(
-                      image: AssetImage(logoImagePath),
-                      fit: BoxFit.scaleDown,
+          color: Colors.blue.shade100,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Container(
+                    width: 30,
+                    height: 30,
+                    decoration: BoxDecoration(
+                      // color: const Color(0xFFD9D9D9),
+                      image: DecorationImage(
+                        image: AssetImage(logoImagePath),
+                        fit: BoxFit.scaleDown,
+                      ),
                     ),
                   ),
                 ),
-              ),
-              const SizedBox(width: 25),
-              Container(
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title,
-                      style: const TextStyle(
-                        color: Colors.black,
-                        fontSize: 20,
-                        fontFamily: 'Roboto',
-                        fontWeight: FontWeight.w500,
-                        height: 0.10,
-                        letterSpacing: 0.10,
+                const SizedBox(width: 25),
+                Container(
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
+                        style: const TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontFamily: 'Roboto',
+                          fontWeight: FontWeight.w500,
+                          height: 0.10,
+                          letterSpacing: 0.10,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
@@ -296,53 +306,56 @@ class ProfilePage extends StatelessWidget {
       required VoidCallback onTap,
       required String logoImagePath}) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
       child: GestureDetector(
         onTap: onTap,
         child: Card(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
-          color: const Color(0xFFFF0000),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 10.0),
-                child: Container(
-                  width: 40,
-                  height: 48,
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFFF0000),
-                    image: DecorationImage(
-                      image: AssetImage(logoImagePath),
-                      fit: BoxFit.scaleDown,
+          color: Colors.red,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Container(
+                    width: 30,
+                    height: 30,
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                      image: DecorationImage(
+                        image: AssetImage(logoImagePath),
+                        fit: BoxFit.scaleDown,
+                      ),
                     ),
                   ),
                 ),
-              ),
-              const SizedBox(width: 25),
-              Container(
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title,
-                      style: const TextStyle(
-                        color: Colors.black,
-                        fontSize: 20,
-                        fontFamily: 'Roboto',
-                        fontWeight: FontWeight.w500,
-                        height: 0.10,
-                        letterSpacing: 0.10,
+                const SizedBox(width: 25),
+                Container(
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
+                        style: const TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontFamily: 'Roboto',
+                          fontWeight: FontWeight.w500,
+                          height: 0.10,
+                          letterSpacing: 0.10,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
