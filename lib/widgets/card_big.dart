@@ -36,9 +36,8 @@ class CardBig extends StatelessWidget {
                 flex: 3,
                 child: Image.asset(
                   image,
-                  fit: BoxFit.cover,
-                  width: screenSize.width * 0.5, // 50% of the screen width
-                  height: screenSize.height * 0.5, // 50% of the screen height
+                  fit: BoxFit.fitHeight,
+                  width: double.infinity,
                 ),
               ),
               const SizedBox(height: 12),
