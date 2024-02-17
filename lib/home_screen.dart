@@ -74,25 +74,24 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(height: 16),
               Row(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CardBig(
-                        title: 'One-stop payments',
-                        image: 'assets/icons/card.png',
-                        buttonText: 'Pay Now',
-                        cardColor: Colors.purple.shade50,
-                        containerColor: Colors.purple.shade100,
-                      ),
-                      const SizedBox(width: 3),
-                      CardBig(
-                        title: 'Bill Tabs',
-                        image: 'assets/icons/bill.png',
-                        buttonText: 'Check Now',
-                        cardColor: Colors.purple.shade50,
-                        containerColor: Colors.purple.shade100,
-                      ),
-                    ],
+                  Expanded(
+                    child: CardBig(
+                      title: 'One-stop payments',
+                      image: 'assets/icons/card.png',
+                      buttonText: 'Pay Now',
+                      cardColor: Colors.purple.shade50,
+                      containerColor: Colors.purple.shade100,
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: CardBig(
+                      title: 'Bill Tabs',
+                      image: 'assets/icons/bill.png',
+                      buttonText: 'Check Now',
+                      cardColor: Colors.purple.shade50,
+                      containerColor: Colors.purple.shade100,
+                    ),
                   ),
                 ],
               ),
@@ -140,7 +139,7 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(width: 8),
                   Expanded(
                     child: CardBig(
-                      title: 'Emergency Numbers',
+                      title: 'Emergency nos.',
                       image: 'assets/icons/emergency.png',
                       buttonText: 'Check Out',
                       cardColor: Colors.yellow.shade100,
@@ -157,25 +156,24 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(height: 16),
               Row(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CardBig(
-                        title: 'Resident Directory',
-                        image: 'assets/icons/residentdir.png',
-                        buttonText: 'Check Out',
-                        cardColor: Colors.green.shade100,
-                        containerColor: Colors.green.shade300,
-                      ),
-                      const SizedBox(width: 3),
-                      CardBig(
-                        title: 'Society Budget',
-                        image: 'assets/icons/budget.png',
-                        buttonText: 'Check Out',
-                        cardColor: Colors.green.shade100,
-                        containerColor: Colors.green.shade300,
-                      ),
-                    ],
+                  Expanded(
+                    child: CardBig(
+                      title: 'Resident Directory',
+                      image: 'assets/icons/residentdir.png',
+                      buttonText: 'Check Out',
+                      cardColor: Colors.green.shade100,
+                      containerColor: Colors.green.shade300,
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: CardBig(
+                      title: 'Society Budget',
+                      image: 'assets/icons/budget.png',
+                      buttonText: 'Check Out',
+                      cardColor: Colors.green.shade100,
+                      containerColor: Colors.green.shade300,
+                    ),
                   ),
                 ],
               ),
@@ -183,7 +181,6 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-      // bottomNavigationBar: ParentWidget(),
     );
   }
 }

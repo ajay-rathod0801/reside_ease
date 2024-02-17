@@ -18,53 +18,71 @@ class CardBig extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Get the screen size
+    final screenSize = MediaQuery.of(context).size;
+
     return GestureDetector(
       onTap: () {},
       child: Card(
         color: cardColor,
         child: SizedBox(
-          height: 250,
-          width: 180,
+          // Use a percentage of the screen size instead of fixed values
+          height: screenSize.height * 0.3,
+          width: screenSize.width * 0.4,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.asset(image, height: 150, width: double.infinity),
-              const SizedBox(height: 12),
-              Container(
-                width: double.infinity,
-                height: 88.0,
-                padding: const EdgeInsets.all(2),
-                decoration: BoxDecoration(
-                  color: containerColor,
-                  borderRadius: BorderRadius.circular(8),
+              Expanded(
+                flex: 3,
+                child: Image.asset(
+                  image,
+                  fit: BoxFit.cover,
+                  width: screenSize.width * 0.5, // 50% of the screen width
+                  height: screenSize.height * 0.5, // 50% of the screen height
                 ),
-                child: Column(
-                  children: [
-                    Text(
-                      title,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.w600, // semibold
-                        fontSize: 18,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                    const SizedBox(height: 5),
-                    OutlinedButton(
-                      onPressed: () {},
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                        foregroundColor: MaterialStateProperty.all<Color>(Colors.purple.shade900),
-                      ),
-                      child: Text(
-                        buttonText,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w600, // semibold
-                          fontSize: 16,
-                          color: Colors.black,
+              ),
+              const SizedBox(height: 12),
+              Expanded(
+                flex: 2,
+                child: Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.symmetric(vertical: 5),
+                  decoration: BoxDecoration(
+                    color: containerColor,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Flexible(
+                        child: Text(
+                          title,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600, // semibold
+                            fontSize:
+                                screenSize.height * 0.02, // 2% of screen height
+                          ),
+                          textAlign: TextAlign.center,
                         ),
                       ),
-                    ),
-                  ],
+                      OutlinedButton(
+                        onPressed: () {},
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.white),
+                        ),
+                        child: Text(
+                          buttonText,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600, // semibold
+                            fontSize:
+                                screenSize.height * 0.02, // 2% of screen height
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               )
             ],
