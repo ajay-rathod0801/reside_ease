@@ -18,19 +18,17 @@ class CardNotice extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      // elevation: 5,
       color: Colors.white,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(2),
       ),
       child: Padding(
-        padding: const EdgeInsets.only(
-          top: 16,
-          left: 12,
-          right: 12,
-          bottom: 16,
+        padding: const EdgeInsets.symmetric(
+          vertical: 16,
+          horizontal: 12,
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
               height: 10,
@@ -48,6 +46,7 @@ class CardNotice extends StatelessWidget {
                     width: 19,
                   ),
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         title,
@@ -95,7 +94,7 @@ class CardNotice extends StatelessWidget {
                       borderRadius: BorderRadius.circular(4),
                     ),
                   ),
-                  child: const Text('Messages'),
+                  child: const Text('Message'),
                 ),
               ),
             ),

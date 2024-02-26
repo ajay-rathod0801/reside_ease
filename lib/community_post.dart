@@ -13,10 +13,6 @@ class CommunityPost extends StatelessWidget {
           right: 8,
         ),
         children: [
-          Divider(
-            height: 0,
-            color: Colors.black,
-          ),
           CardNotice(
             leading: CircleAvatar(
               child: Text('A'),
@@ -28,10 +24,7 @@ class CommunityPost extends StatelessWidget {
               // Add learn more logic here
             },
           ),
-          Divider(
-            height: 0,
-            color: Colors.black,
-          ),
+
           CardNotice(
             leading: CircleAvatar(
               child: Text('B'), // You can place initials or an image here
@@ -39,15 +32,12 @@ class CommunityPost extends StatelessWidget {
             title: 'Varun Mandal, N-302',
             subtitle: '12 days ago',
             description:
-                " Kudos to our amazing maintanance team for promptly fixing the elevator issue - your hard work doesn't go unnoticed!",
+                "Kudos to our amazing maintenance team for promptly fixing the elevator issue - your hard work doesn't go unnoticed!",
             onMessagePressed: () {
               // Add learn more logic here
             },
           ),
-          Divider(
-            height: 0,
-            color: Colors.black,
-          ),
+
           CardNotice(
             leading: CircleAvatar(
               backgroundImage: AssetImage(
@@ -61,10 +51,7 @@ class CommunityPost extends StatelessWidget {
               // Add learn more logic here
             },
           ),
-          Divider(
-            height: 0,
-            color: Colors.black,
-          ),
+
           CardNotice(
             leading: CircleAvatar(
               backgroundImage: AssetImage(
@@ -78,10 +65,7 @@ class CommunityPost extends StatelessWidget {
               // Add learn more logic here
             },
           ),
-          Divider(
-            height: 0,
-            color: Colors.black,
-          ),
+
           CardNotice(
             leading: CircleAvatar(
               backgroundImage: AssetImage(

@@ -91,9 +91,6 @@ flutter:
     - assets/icons/settings.png
     - assets/icons/members.png
     - assets/icons/saved.png
-    - assets/icons/avatar1.jpg
-    - assets/icons/avatar2.jpg
-    - assets/icons/avatar3.jpg
     
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

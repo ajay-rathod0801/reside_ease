@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorSchemeSeed: Colors.blue,
         scaffoldBackgroundColor: const Color.fromRGBO(249, 249, 255, 1),
       ),
-      home: IntroductoryScreen(),
+      home: ParentWidget(),
     );
   }
 }
