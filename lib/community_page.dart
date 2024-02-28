@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:reside_ease/community_event_page.dart';
+import 'package:reside_ease/community_post.dart';
 import 'package:reside_ease/widgets/top_appbar.dart';
 import 'package:reside_ease/community_notice_board.dart';
 
@@ -50,9 +51,7 @@ class CommunityPage extends StatelessWidget {
             const Expanded(
               child: TabBarView(
                 children: <Widget>[
-                  Center(
-                    child: Text("Posts"),
-                  ),
+                  CommunityPost(),
                   CommunityEvent(),
                   CommunityNotice()
                 ],
