@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   dio: ^5.4.0
   flutter_launcher_icons: ^0.13.1
+  cached_network_image: ^3.3.1
 
 dev_dependencies:
   flutter_test:
@@ -69,28 +70,8 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/icons/icons_google.png
-    - assets/logo.png
-    - assets/icons/invite.png
-    - assets/icons/log.png
-    - assets/icons/call.png
-    - assets/icons/SOS.png
-    - assets/icons/avatar.png
-    - assets/icons/card.png
-    - assets/icons/bill.png
-    - assets/icons/helpdesk.png
-    - assets/icons/domestic.png
-    - assets/icons/connect.png
-    - assets/icons/emergency.png
-    - assets/icons/residentdir.png
-    - assets/icons/budget.png
-    - assets/profile_image.png
-    - assets/icons/addHome.png
-    - assets/icons/editProfile.png
-    - assets/icons/logout.png
-    - assets/icons/settings.png
-    - assets/icons/members.png
-    - assets/icons/saved.png
+    - assets/icons/
+    - assets/
     
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

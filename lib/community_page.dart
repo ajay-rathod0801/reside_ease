@@ -18,11 +18,9 @@ class CommunityPage extends StatelessWidget {
             Material(
               color: Colors.transparent,
               child: Padding(
-                padding: const EdgeInsets.only(
-                  left: 15.0,
-                  right: 15.0,
-                  top: 5.0,
-                  bottom: 5.0,
+                padding: const EdgeInsets.symmetric(
+                  vertical: 5.0,
+                  horizontal: 15.0,
                 ),
                 child: TabBar(
                   indicatorColor: Colors.blue.shade900,
@@ -59,7 +57,6 @@ class CommunityPage extends StatelessWidget {
             ),
           ],
         ),
-        // bottomNavigationBar: ParentWidget(),
       ),
     );
   }

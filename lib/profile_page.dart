@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:reside_ease/add_home.dart';
 import 'package:reside_ease/members.dart';
-import 'package:reside_ease/widgets/top_appbar.dart';
 import 'package:reside_ease/edit_profile.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -19,13 +18,6 @@ class ProfilePage extends StatelessWidget {
           child: ListView(
             children: [
               _buildProfileImage(
-                onTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Profile Image Clicked'),
-                    ),
-                  );
-                },
               ),
               _buildProfileDetails(),
               _buildEditProfileButton(() {
@@ -114,11 +106,11 @@ class ProfilePage extends StatelessWidget {
     );
   }
 
-  Widget _buildProfileImage({required VoidCallback onTap}) {
+  Widget _buildProfileImage() {
     return Padding(
       padding: const EdgeInsets.only(left: 16, top: 10),
       child: GestureDetector(
-        onTap: onTap,
+        
         child: Container(
           width: 200,
           height: 200,

@@ -74,7 +74,47 @@ class _EditProfileState extends State<EditProfile> {
             ),
             SizedBox(height: screenHeight * 0.02),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                showModalBottomSheet(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(screenWidth * 0.05),
+                      topRight: Radius.circular(screenWidth * 0.05),
+                    ),
+                  ),
+                  context: context,
+                  builder: (BuildContext context) {
+                    return Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        ListTile(
+                          leading: Icon(Icons.camera),
+                          title: Text('Open Camera'),
+                          onTap: () {
+                            // Add your functionality for opening the camera here
+                          },
+                        ),
+                        ListTile(
+                          leading: Icon(Icons.photo_library),
+                          title: Text('Open Gallery'),
+                          onTap: () {
+                            // Add your functionality for opening the gallery here
+                          },
+                        ),
+                        ListTile(
+                          leading: Icon(Icons.delete),
+                          title: Text('Remove Current Picture'),
+                          iconColor: Colors.red,
+                          textColor: Colors.red,
+                          onTap: () {
+                            // Add your functionality for removing the current picture here
+                          },
+                        ),
+                      ],
+                    );
+                  },
+                );
+              },
               child: Text(
                 'Edit profile picture',
                 style: TextStyle(

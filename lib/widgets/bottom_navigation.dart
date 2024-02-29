@@ -73,8 +73,8 @@ class BottomNavigation extends StatelessWidget {
           label: 'Community',
         ),
         NavigationDestination(
-          selectedIcon: Icon(Icons.person),
-          icon: Icon(Icons.person_2_outlined),
+          selectedIcon: Icon(Icons.account_circle_rounded),
+          icon: Icon(Icons.account_circle_outlined),
           label: 'Profile',
         ),
       ],

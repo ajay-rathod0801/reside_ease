@@ -8,9 +8,8 @@ class CommunityPost extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        padding: const EdgeInsets.only(
-          left: 8,
-          right: 8,
+        padding: const EdgeInsets.symmetric(
+          horizontal: 8.0,
         ),
         children: [
           CardNotice(
@@ -81,6 +80,78 @@ class CommunityPost extends StatelessWidget {
           ),
           // Add more CardEvents as needed
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showModalBottomSheet(
+            context: context,
+            isScrollControlled: true,
+            builder: (context) {
+              return Padding(
+                padding: MediaQuery.of(context).viewInsets,
+                child: Container(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          IconButton(
+                            icon: Icon(Icons.close),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                          ),
+                          ElevatedButton(
+                            child: Text('Post'),
+                            onPressed: () {
+                              // Handle post logic here
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.blue.shade900,
+                              foregroundColor: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 10),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          CircleAvatar(
+                            radius: 15,
+                            // Replace with your user's profile photo
+                            backgroundImage: NetworkImage(
+                                'https://placehold.co/600x400@2x.png'),
+                          ),
+                          SizedBox(
+                              width:
+                                  10), // Add some spacing between the avatar and the text field
+                          Expanded(
+                            child: TextFormField(
+                              maxLines: 5,
+                              maxLength: 200,
+                              decoration: InputDecoration(
+                                hintText: "What's happening?",
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
+          );
+        },
+        child: Icon(Icons.add),
+        foregroundColor: Colors.white,
+        backgroundColor: Colors.blue.shade900,
       ),
     );
   }
